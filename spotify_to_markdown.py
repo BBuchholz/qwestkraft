@@ -44,7 +44,7 @@ def main():
         while results:
             for item in results['items']:
                 # Use safe .get() just in case the item contains an empty/local placeholder
-                track = item.get('track') 
+                track = item.get('item') or item.get('track') 
                 if track and track.get('name'):
                     tracks.append(track)
             if results['next']:
